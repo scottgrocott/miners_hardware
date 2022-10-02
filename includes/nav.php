@@ -7,30 +7,34 @@
               Dashboard
             </a>
           </li>
-          <li class="nav-item">
-            <a <?php echo ($_SERVER['REQUEST_URI'] == '/deliveries') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/deliveries">
-              <span data-feather="truck"></span>
-              Deliveries
-            </a>
-          </li>		  
-          <li class="nav-item">
-            <a <?php echo ($_SERVER['REQUEST_URI'] == '/screens') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/screens">
-              <span data-feather="file"></span>
-              Screens
-            </a>
-          </li>
+		  
           <li class="nav-item">
             <a <?php echo ($_SERVER['REQUEST_URI'] == '/products') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/products">
               <span data-feather="shopping-cart"></span>
               Products
             </a>
           </li>
-          <li class="nav-item">
-            <a <?php echo ($_SERVER['REQUEST_URI'] == '/customers') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/customers">
-              <span data-feather="users"></span>
-              Customers
-            </a>
-          </li>
+			<!-- 	  		  
+				<li class="nav-item">
+				<a <?php echo ($_SERVER['REQUEST_URI'] == '/deliveries') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/deliveries">
+				<span data-feather="truck"></span>
+				Deliveries
+				</a>
+				</li>	
+				
+				<li class="nav-item">
+				<a <?php echo ($_SERVER['REQUEST_URI'] == '/screens') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/screens">
+				<span data-feather="file"></span>
+				Screens
+				</a>
+				</li>
+				
+				<li class="nav-item">
+				<a <?php echo ($_SERVER['REQUEST_URI'] == '/customers') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/customers">
+				<span data-feather="users"></span>
+				Customers
+				</a>
+			</li> -->
 
 
         </ul>
