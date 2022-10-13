@@ -1,5 +1,7 @@
 <?php
+
 function getProducts(){
+    require_once __DIR__ . '/vendor/autoload.php';
 	$collection = (new MongoDB\Client)->miners->products;
 	$cursor = $collection->find();
     foreach ($cursor as $document) {
