@@ -1,7 +1,7 @@
 <?php
 
 function getProducts(){
-    require_once __DIR__ . '/vendor/autoload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 	$collection = (new MongoDB\Client)->miners->products;
 	$cursor = $collection->find();
     foreach ($cursor as $document) {
