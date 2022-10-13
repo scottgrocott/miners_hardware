@@ -2,13 +2,14 @@
 
 
 function getProducts(){
-	$collection = (new MongoDB\Client)->test->users;
+	$product =array();
+	$collection = (new MongoDB\Client)->miners->products;
 	$cursor = $collection->find();
-
-	foreach ($cursor as $document) {
-		echo $document['_id'], "<br>";
-		echo $document['email'], "<br>";
-	}
+    foreach ($cursor as $document) {
+       echo $document['_id'], "<br>";
+		echo $document['upc'], "<br>";
+    }
+	//echo json_encode($cursor);
 }
 
 

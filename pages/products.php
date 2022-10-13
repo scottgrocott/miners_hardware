@@ -7,17 +7,14 @@
         <h1 class="h2">Products</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse">New</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onClick="">New</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
 
         </div>
       </div>
-	  <div class="collapse" id="collapse">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  </div>
-</div>
+
+
 <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -25,129 +22,57 @@
               <th scope="col">SKU</th>
               <th scope="col">UPC</th>
               <th scope="col">Desc.</th>
+<!--
               <th scope="col">Last Received</th>
               <th scope="col">Last Count</th>
+-->
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
+   <?php
+getProducts();
+?>
+
           </tbody>
         </table>
       </div>
-      <?php
-  getProducts();
-  ?> 
+
+        <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input field
+  $sku = strtoupper($_POST['sku']);
+  $upc = $_POST['upc'];
+  $desc = $_POST['desc'];
+  if (empty($sku)) {
+    echo "sku is empty";
+  } else {
+    //echo $sku;
+    createProduct($sku,$upc,$desc);
+  }
+}
+?>
+      <div style="display: block;" id="add">
+      <form action="/products" method="post">
+ 
+ <h1 class="h3 mb-3 fw-normal">Add New Product</h1>
+
+ <div class="form-floating">
+   <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU">
+   <label for="floatingInput">SKU</label>
+ </div>
+ <div class="form-floating">
+   <input type="text" class="form-control" id="upc" name="upc"placeholder="UPC">
+   <label for="upc">UPC</label>
+ </div>
+
+ <div class="form-floating">
+   <input type="text" class="form-control" id="desc" name="desc"placeholder="Description">
+   <label for="desc">Description</label>
+ </div>
+ <button class="w-100 btn btn-lg btn-primary" type="submit">Add Product</button>
+
+</form>
+</div>
     </main>
  
 <?php include $_SERVER['DOCUMENT_ROOT']."/includes/footer.php"?>
