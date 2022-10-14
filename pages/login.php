@@ -95,9 +95,10 @@ body {
     </div>
 
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    
 
   </form>
+  <button class="w-100 btn btn-lg btn-primary" onClick="window.location ='/products';">Sign in</button>
 </main>
 
 
