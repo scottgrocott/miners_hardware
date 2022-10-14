@@ -81,7 +81,7 @@ body {
   <body class="text-center">
     
 <main class="form-signin">
-  <form action="/dashboard" method="post">
+  <form action="/products" method="post">
  
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
