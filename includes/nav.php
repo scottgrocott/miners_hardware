@@ -11,7 +11,7 @@
           <li class="nav-item">
             <a <?php echo ($_SERVER['REQUEST_URI'] == '/products') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/products">
               <span data-feather="shopping-cart"></span>
-              Products
+              Products <?php echo $_SERVER['SERVER_NAME'];?>
             </a>
           </li>
 			<!-- 	  		  
