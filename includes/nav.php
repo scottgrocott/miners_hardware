@@ -1,19 +1,25 @@
  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
+		          <li class="nav-item">
+            <a <?php echo ($_SERVER['REQUEST_URI'] == '/products') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/products">
+              <span data-feather="shopping-cart"></span>
+              Products 
+            </a>	
+            <a <?php echo ($_SERVER['REQUEST_URI'] == '/work') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/products">
+              <span data-feather="shopping-cart"></span>
+              Work Log
+            </a>	
+
+		  <?php if($_SERVER['SERVER_NAME'] == 'localhost'){?>
           <li class="nav-item">
             <a <?php echo ($_SERVER['REQUEST_URI'] == '/dashboard') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/dashboard">
               <span data-feather="home"></span>
               Dashboard
             </a>
           </li>
-		  
-          <li class="nav-item">
-            <a <?php echo ($_SERVER['REQUEST_URI'] == '/products') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/products">
-              <span data-feather="shopping-cart"></span>
-              Products <?php echo $_SERVER['SERVER_NAME'];?>
-            </a>
           </li>
+		  <?php }?>
 			<!-- 	  		  
 				<li class="nav-item">
 				<a <?php echo ($_SERVER['REQUEST_URI'] == '/deliveries') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/deliveries">
