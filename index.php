@@ -18,7 +18,10 @@ switch ($_SERVER['REQUEST_URI']) {
         break;
     case '/deliveries':
         include 'pages/deliveries.php';
-        break;		
+        break;	
+    case '/work':
+        include 'pages/work.php';
+        break;       	
     default:
         include 'pages/login.php';
         break;

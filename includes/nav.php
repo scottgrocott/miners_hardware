@@ -6,7 +6,7 @@
               <span data-feather="shopping-cart"></span>
               Products 
             </a>	
-            <a <?php echo ($_SERVER['REQUEST_URI'] == '/work') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/products">
+            <a <?php echo ($_SERVER['REQUEST_URI'] == '/work') ? 'class="nav-link active" aria-current="page"': 'class="nav-link"'; ?> href="/work">
               <span data-feather="shopping-cart"></span>
               Work Log
             </a>	
