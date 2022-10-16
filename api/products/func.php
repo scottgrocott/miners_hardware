@@ -2,14 +2,20 @@
 
 
 function getProducts(){
-	$product =array();
+	$product_results =array();
 	$collection = (new MongoDB\Client)->miners->products;
 	$cursor = $collection->find();
-    foreach ($cursor as $document) {
-       echo $document['_id'], "<br>";
-		echo $document['upc'], "<br>";
-    }
-	//echo json_encode($cursor);
+	$data_to_encode = array();
+	foreach($cursor as $mongo){
+		$data['_id'] = $mongo['_id'];
+		$data['sku'] = $mongo['sku'];
+		$data['upc'] = $mongo['upc'];
+		$data['desc'] = $mongo['desc'];
+		$data_to_encode[] = $data;
+	}
+	
+	$json = json_encode($data_to_encode);
+	echo $json;
 }
 
 
